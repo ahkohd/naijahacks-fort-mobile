@@ -10,3 +10,6 @@ $ionic cordova build android --release --prod --minifyjs --minifycss --optimizej
 // build for ios
 $ionic cordova build ios --release --prod --minifyjs --minifycss --optimizejs
 ```
+
+
+You can also dwonload already built and signed: https://github.com/ahkohd/naijahacks-fort-mobile/blob/master/NaijaHacksPlantAI.apk
