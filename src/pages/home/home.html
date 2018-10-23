@@ -1,0 +1,44 @@
+<ion-content>
+
+  <div class="range-pane" *ngIf="!imgURL">
+      <ion-range min="1" [max]="maxZoom" [(ngModel)]="zoom" (ionChange)="zoomChange($event)"color="secondary"></ion-range>
+  </div>
+    
+
+<div class="content-pane" [ngStyle]="{'backgroundImage': 'url('+imgURL+')'}" (tap)="cameraFocus($event)">
+    <!-- <img [src]="imgURL" *ngIf="imgURL"/> -->
+    <img src="assets/imgs/take-pic.png" class="take-picture" *ngIf="!imgURL"/>
+</div>
+ 
+  
+
+  
+
+  <ion-fab left bottom *ngIf="!imgURL">
+    <button ion-fab  end  (click)="pickImage()">
+      <ion-icon name="image" color="light"></ion-icon>
+    </button>
+  </ion-fab>
+
+  
+  <ion-fab center bottom *ngIf="!imgURL">
+    <button ion-fab (click)="captureImage()" class="snap" color="light">
+      <ion-icon name="camera" color="light"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-fab right bottom *ngIf="!imgURL">
+    <button ion-fab end (click)="aboutPage()">
+      <ion-icon name="information-circle"  color="light"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-fab right top *ngIf="!imgURL">
+      <button ion-fab min end (click)="reverseCam()">
+        <ion-icon name="md-reverse-camera"  color="light"></ion-icon>
+      </button>
+    </ion-fab>
+
+   
+
+</ion-content>

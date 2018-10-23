@@ -1,0 +1,71 @@
+<!--
+  Generated template for the ResultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ plantName }}</ion-title>
+
+    <ion-buttons end>
+        <!-- <button ion-button clear  (click)="share()">
+            <ion-icon name="md-share" class="header-btn"></ion-icon>
+        </button>
+         -->
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-card class="card-result" [ngStyle]="{'backgroundImage': 'url('+imgURL+')'}">        
+        <ion-card-content>
+          <h3>{{ plantName }} plant disease</h3>
+        </ion-card-content>
+      
+      </ion-card>
+
+
+
+      <ion-list>
+          <ion-list-header>
+           <ion-icon name="information-circle" class="content-i"></ion-icon>&nbsp; More  Information
+          </ion-list-header>
+          <div *ngIf="wikiResult">
+            
+              <ion-item class="result" *ngFor="let r of wikiResult; let i = index">
+
+                  <button ion-button clear  (click)="openInAppBrowser(r.pageid)" item-end>
+                      <ion-icon name="md-open" class="open"></ion-icon>
+                  </button>
+                       <h2>{{ r.title }}</h2>
+                       <p>Wikipedia</p>
+                       <div [innerHTML]="r.snippet">
+                       </div>
+                 </ion-item>
+               
+          </div>
+        </ion-list>
+
+        <div class="no-connect" *ngIf="!wikiResult && fetching==false">
+            <p>Connection failed!</p>
+            <br>
+            <img src="assets/imgs/network-error.png">
+            <button ion-button (click)="tryAgain()" outline> TRY AGAIN</button>
+        </div>
+
+        <div class="no-result" *ngIf="wikiResult && wikiResult.length ==0 ">
+            <p>Ops! Sorry no result found.</p>
+        </div>
+
+        
+        <div class="loading" *ngIf="!wikiResult && fetching==true">
+            <ion-spinner></ion-spinner>
+            <p>&nbsp;&nbsp;&nbsp;Loading...</p>
+        </div>
+
+</ion-content>

@@ -1,0 +1,33 @@
+page-home .fab {
+  background: transparent !important;
+  box-shadow: none;
+}
+
+page-home .snap {
+  border: 4px solid white !important;
+}
+
+page-home .content-pane {
+  position: fixed;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  display: flex;
+  background-color: transparent;
+}
+
+page-home .range-pane {
+  position: absolute;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  width: 30%;
+  padding-left: 20px;
+}
+
+page-home .take-picture {
+  margin: auto;
+  display: table;
+}

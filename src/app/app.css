@@ -1,0 +1,31 @@
+/*
+   * STYLING SCROLLBAR
+   */
+::-webkit-scrollbar {
+  width: 0px !important;
+  background-color: transparent !important;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 0px !important;
+  background-color: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+html, body, .ion-app, .ion-content, .fixed-content, .content, .ion-page, .app-root {
+  background-color: transparent !important;
+}
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,8 @@
+page-about html, page-about body, page-about .ion-app, page-about .ion-content, page-about .fixed-content, page-about .content, page-about .ion-page, page-about .app-root {
+  background-color: white !important;
+}
+
+page-about .toolbar, page-about .toolbar-title, page-about .custom-toolbar, page-about .toolbar-background, page-about ion-icon {
+  color: #fff;
+  background: #219653;
+}
