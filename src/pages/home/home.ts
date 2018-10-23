@@ -172,7 +172,7 @@ export class HomePage {
       this.api.postImage(this.imgURL).subscribe(
         data => {
 
-          if((<any>data).error==0)
+          if((<any>data).error!=0)
           {
             
             // ai unable to process image.
@@ -197,7 +197,7 @@ export class HomePage {
             loading.dismiss();
             // this.cameraPreview.show();
             this.imgURL = undefined;
-            this.presentAlert("Unable to connect to server. Try Again! "+err.message, "Error");
+            this.presentAlert("Unable to connect to server. Try Again!", "Error");
         });
 
 
