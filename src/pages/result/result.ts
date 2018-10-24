@@ -91,4 +91,10 @@ export class ResultPage {
     
     }
 
+    translate()
+    {
+      
+    }
+
+
 }

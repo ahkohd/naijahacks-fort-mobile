@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
@@ -11,7 +11,11 @@ import { Injectable } from '@angular/core';
 export class ApiProvider {
 
 
-  private rexApi: string = "https://cors-anywhere.herokuapp.com/https://naijahacks.appspot.com/predict";
+  // https://cors-anywhere.herokuapp.com/
+  private rexApi: string = "https://naijahacks.appspot.com/predict";
+  private googleApis: string = "https://translation.googleapis.com/language/translate/v2";
+  // private lang = ["yo"];
+
   constructor(public http: HttpClient) {
     console.log('Hello ApiProvider Provider');
   }
@@ -20,7 +24,7 @@ export class ApiProvider {
   fetchWiki(query: string)
   {
     
-    return this.http.get(`https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=${query}`);
+    return this.http.get(`https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=${query}`);
   }
 
 
@@ -28,4 +32,5 @@ export class ApiProvider {
   {
     return this.http.post(this.rexApi, { plant_image:  imgUrl});
   }
+
 }

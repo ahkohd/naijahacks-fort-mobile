@@ -20,6 +20,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private imagePicker: ImagePicker, private alertCtrl: AlertController, private cameraPreview: CameraPreview, public loadingCtrl: LoadingController,  private api: ApiProvider) { }
 
+ 
   ionViewWillEnter()
   {
     console.log(window.screen.width, window.screen.height);
@@ -210,5 +211,7 @@ export class HomePage {
       // this.navCtrl.push(ResultPage);
 
     }
+
+    
 
 }
