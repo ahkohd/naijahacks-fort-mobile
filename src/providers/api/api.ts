@@ -14,7 +14,7 @@ export class ApiProvider {
   // https://cors-anywhere.herokuapp.com/
   private rexApi: string = "https://naijahacks.appspot.com/predict";
   private googleApis: string = "https://translation.googleapis.com/language/translate/v2";
-  // private lang = ["yo"];
+  private lang = ["yo"];
 
   constructor(public http: HttpClient) {
     console.log('Hello ApiProvider Provider');
@@ -31,6 +31,15 @@ export class ApiProvider {
   postImage(imgUrl)
   {
     return this.http.post(this.rexApi, { plant_image:  imgUrl});
+  }
+
+  translate(text)
+  {
+    return this.http.post(this.googleApis, {
+      key: "AIzaSyA5bnuKKsxXeq80REjqEwQVNI7BffcPx6I",
+      q: text,
+      target: "yo"
+    })
   }
 
 }

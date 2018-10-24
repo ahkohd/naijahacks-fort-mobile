@@ -23,6 +23,7 @@ export class HomePage {
  
   ionViewWillEnter()
   {
+
     console.log(window.screen.width, window.screen.height);
 
       // camera options (Size and location). In the following example, the preview uses the rear camera and display the preview in the back of the webview
